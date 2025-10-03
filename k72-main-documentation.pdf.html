@@ -1,0 +1,1315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K72-Main Project Documentation</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            page-break-before: always;
+        }
+        h1:first-of-type {
+            page-break-before: avoid;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .cover {
+            text-align: center;
+            padding: 100px 0;
+            page-break-after: always;
+        }
+        .cover h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            border: none;
+            margin-bottom: 20px;
+        }
+        .cover .subtitle {
+            font-size: 24px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+        .cover .meta {
+            font-size: 16px;
+            color: #95a5a6;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 2px;
+        }
+        .badge-primary { background: #3498db; color: white; }
+        .badge-success { background: #2ecc71; color: white; }
+        .badge-warning { background: #f39c12; color: white; }
+        .badge-info { background: #9b59b6; color: white; }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .alert-info {
+            background: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            color: #0c5460;
+        }
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .architecture-diagram {
+            background: #f8f9fa;
+            padding: 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+    <h1>K72-Main Project</h1>
+    <div class="subtitle">Complete Technical Documentation</div>
+    <div class="meta">
+        <p>React + Vite Portfolio Website</p>
+        <p>Version: 0.0.0</p>
+        <p>Generated: 10/3/2025</p>
+    </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+    <h2>📋 Table of Contents</h2>
+    <ul>
+        <li><a href="#overview">1. Project Overview</a></li>
+        <li><a href="#tech-stack">2. Technology Stack</a></li>
+        <li><a href="#architecture">3. System Architecture</a></li>
+        <li><a href="#database">4. Database Structure</a></li>
+        <li><a href="#algorithms">5. Algorithms & Logic</a></li>
+        <li><a href="#uiux">6. UI/UX Design</a></li>
+        <li><a href="#animations">7. Animation Tools & Techniques</a></li>
+        <li><a href="#setup">8. Setup & Installation</a></li>
+        <li><a href="#components">9. Component Structure</a></li>
+        <li><a href="#code-analysis">10. Complete Code Analysis</a></li>
+    </ul>
+</div>
+
+<!-- 1. PROJECT OVERVIEW -->
+<h1 id="overview">1. Project Overview</h1>
+<div class="section">
+    <h2>📝 Description</h2>
+    <p>K72-Main is a modern, animated portfolio website built for a creative digital agency. The project showcases advanced web development techniques including smooth page transitions, scroll-based animations, and a sophisticated full-screen navigation system.</p>
+    
+    <h2>🎯 Project Type</h2>
+    <p><span class="badge badge-primary">Portfolio Website</span> <span class="badge badge-success">Single Page Application</span> <span class="badge badge-info">Animation Showcase</span></p>
+    
+    <h2>✨ Key Features</h2>
+    <ul class="feature-list">
+        <li>🎬 Full-screen video background with embedded video elements</li>
+        <li>🔄 Smooth page transitions with "stairs" animation effect</li>
+        <li>📱 Fully responsive design for all device sizes</li>
+        <li>🎨 Custom navigation with hover effects and animations</li>
+        <li>📜 Scroll-triggered animations using GSAP ScrollTrigger</li>
+        <li>🖼️ Dynamic image galleries with hover effects</li>
+        <li>🌐 Multi-language support (French content)</li>
+        <li>⚡ Optimized performance with Vite build tool</li>
+    </ul>
+</div>
+
+<!-- 2. TECHNOLOGY STACK -->
+<h1 id="tech-stack">2. Technology Stack</h1>
+<div class="section">
+    <h2>🔧 Core Technologies</h2>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Technology</th>
+            <th>Version</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td><strong>Framework</strong></td>
+            <td>React</td>
+            <td>18.2.0</td>
+            <td>Component-based UI library</td>
+        </tr>
+        <tr>
+            <td><strong>Build Tool</strong></td>
+            <td>Vite</td>
+            <td>5.2.0</td>
+            <td>Fast build tool and dev server</td>
+        </tr>
+        <tr>
+            <td><strong>Language</strong></td>
+            <td>JavaScript (JSX)</td>
+            <td>ES6+</td>
+            <td>Programming language</td>
+        </tr>
+        <tr>
+            <td><strong>Styling</strong></td>
+            <td>Tailwind CSS</td>
+            <td>4.1.12</td>
+            <td>Utility-first CSS framework</td>
+        </tr>
+        <tr>
+            <td><strong>Animation</strong></td>
+            <td>GSAP (GreenSock)</td>
+            <td>3.13.0</td>
+            <td>Professional animation library</td>
+        </tr>
+        <tr>
+            <td><strong>Routing</strong></td>
+            <td>React Router DOM</td>
+            <td>7.8.0</td>
+            <td>Client-side routing</td>
+        </tr>
+    </table>
+
+    <h2>📦 Dependencies</h2>
+    <h3>Production Dependencies</h3>
+    <pre>
+{
+  "@gsap/react": "^2.1.2",              // GSAP React integration
+  "@tailwindcss/vite": "^4.1.12",       // Tailwind Vite plugin
+  "gsap": "^3.13.0",                    // Animation library
+  "react": "^18.2.0",                   // React core
+  "react-dom": "^18.2.0",               // React DOM renderer
+  "react-router-dom": "^7.8.0",         // Routing library
+  "tailwindcss": "^4.1.12"              // CSS framework
+}</pre>
+
+    <h3>Development Dependencies</h3>
+    <pre>
+{
+  "@vitejs/plugin-react": "^4.2.1",     // React plugin for Vite
+  "eslint": "^8.57.0",                  // Code linting
+  "vite": "^5.2.0"                      // Build tool
+}</pre>
+</div>
+
+<!-- 3. SYSTEM ARCHITECTURE -->
+<h1 id="architecture">3. System Architecture</h1>
+<div class="section">
+    <h2>🏗️ Project Structure</h2>
+    <div class="architecture-diagram">
+k72-main/
+├── public/
+│   ├── fonts/
+│   │   ├── Lausanne-300.woff2        # Light font weight
+│   │   └── Lausanne-500.woff2        # Medium font weight
+│   ├── video.mp4                     # Background video
+│   └── vite.svg                      # Favicon
+├── src/
+│   ├── assets/
+│   │   └── react.svg                 # React logo
+│   ├── components/
+│   │   ├── common/
+│   │   │   └── Stairs.jsx            # Page transition component
+│   │   ├── home/
+│   │   │   ├── HomeBottomText.jsx    # Home page bottom section
+│   │   │   ├── HomeHeroText.jsx      # Home page hero section
+│   │   │   └── Video.jsx             # Video player component
+│   │   ├── Navigation/
+│   │   │   ├── FullScreenNav.jsx     # Full-screen navigation overlay
+│   │   │   └── Navbar.jsx            # Main navigation bar
+│   │   └── projects/
+│   │       └── ProjectCard.jsx       # Project display card
+│   ├── context/
+│   │   └── NavContext.jsx            # Navigation state management
+│   ├── pages/
+│   │   ├── Agence.jsx                # Agency page
+│   │   ├── Home.jsx                  # Home page
+│   │   └── Projects.jsx              # Projects page
+│   ├── App.jsx                       # Main application component
+│   ├── index.css                     # Global styles
+│   └── main.jsx                      # Application entry point
+├── index.html                        # HTML template
+├── package.json                      # Project configuration
+└── vite.config.js                    # Vite configuration
+    </div>
+
+    <h2>🔄 Component Architecture</h2>
+    <pre>
+App (Main Router)
+├── Navbar (Always visible)
+├── FullScreenNav (Overlay menu)
+└── Routes
+    ├── Home Page
+    │   ├── Video (Background)
+    │   ├── HomeHeroText
+    │   └── HomeBottomText
+    ├── Projects Page
+    │   └── ProjectCard (Multiple instances)
+    └── Agence Page
+        └── Team Members Gallery
+    </pre>
+
+    <h2>🎭 State Management</h2>
+    <p>The application uses React Context API for global state management:</p>
+    <ul class="feature-list">
+        <li><strong>NavbarContext:</strong> Controls navigation menu open/close state</li>
+        <li><strong>NavbarColorContext:</strong> Manages navbar color based on current route</li>
+    </ul>
+</div>
+
+<!-- 4. DATABASE -->
+<h1 id="database">4. Database Structure</h1>
+<div class="section">
+    <div class="alert alert-info">
+        <strong>ℹ️ Important Note:</strong> This project is a <strong>static frontend application</strong> with no backend server or database. All content is hardcoded in the components or fetched from external image URLs.
+    </div>
+
+    <h2>📊 Data Storage Approach</h2>
+    <table>
+        <tr>
+            <th>Data Type</th>
+            <th>Storage Method</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>Text Content</td>
+            <td>Hardcoded in Components</td>
+            <td>JSX Components</td>
+        </tr>
+        <tr>
+            <td>Images</td>
+            <td>External URLs</td>
+            <td>k72.ca/uploads/</td>
+        </tr>
+        <tr>
+            <td>Videos</td>
+            <td>Static Files</td>
+            <td>public/video.mp4</td>
+        </tr>
+        <tr>
+            <td>Fonts</td>
+            <td>Static Files</td>
+            <td>public/fonts/</td>
+        </tr>
+    </table>
+
+    <h2>🖼️ External Data Sources</h2>
+    <p>Project images are hosted on the K72 agency website:</p>
+    <pre>
+Base URL: https://k72.ca/uploads/
+
+Case Studies:
+- /caseStudies/PJC/
+- /caseStudies/WIDESCAPE/
+- /caseStudies/OKA/
+- /caseStudies/Opto/
+- /caseStudies/LAMAJEURE_-_Son_sur_mesure/
+- /caseStudies/SHELTON/
+
+Team Members:
+- /teamMembers/Carl_480x640-480x640.jpg
+- /teamMembers/Olivier_480x640-480x640.jpg
+- (14 team member images total)
+    </pre>
+</div>
+
+<!-- 5. ALGORITHMS & LOGIC -->
+<h1 id="algorithms">5. Algorithms & Logic</h1>
+<div class="section">
+    <h2>🧮 Core Algorithms</h2>
+
+    <h3>1. Stairs Transition Algorithm</h3>
+    <p>Creates a sequential "stairs" animation effect during page transitions:</p>
+    <pre>
+Algorithm: Staggered Vertical Reveal
+─────────────────────────────────────
+1. Divide screen into 5 equal vertical sections
+2. Animate sections from right to left:
+   - Section 5 appears first (height: 0 → 100%)
+   - Section 4 appears with 0.04s delay
+   - Section 3 appears with 0.08s delay
+   - Section 2 appears with 0.12s delay
+   - Section 1 appears last (0.16s delay)
+3. Once all visible, slide up simultaneously:
+   - All sections move y: 0 → y: 100% (staggered)
+4. Reset positions while hidden for next transition
+
+Timeline:
+0.0s  [█████] [     ] [     ] [     ] [     ]
+0.04s [█████] [█████] [     ] [     ] [     ]
+0.08s [█████] [█████] [█████] [     ] [     ]
+0.12s [█████] [█████] [█████] [█████] [     ]
+0.16s [█████] [█████] [█████] [█████] [█████]
+0.40s (Slide up animation begins)
+    </pre>
+
+    <h3>2. Scroll-Based Image Sequence</h3>
+    <p>On the Agence page, scrolling changes team member images:</p>
+    <pre>
+Algorithm: Scroll-Progress Image Swapper
+──────────────────────────────────────
+Input: 14 team member images, scroll progress (0-1)
+
+function onScrollUpdate(progress):
+    if progress < 1:
+        imageIndex = floor(progress × imageArray.length)
+    else:
+        imageIndex = imageArray.length - 1
+    
+    imageRef.current.src = imageArray[imageIndex]
+
+Calculation Example:
+- Scroll Progress: 0.25 → Image Index: floor(0.25 × 14) = 3
+- Scroll Progress: 0.50 → Image Index: floor(0.50 × 14) = 7
+- Scroll Progress: 0.75 → Image Index: floor(0.75 × 14) = 10
+- Scroll Progress: 1.00 → Image Index: 13 (last image)
+    </pre>
+
+    <h3>3. Staggered Project Card Animation</h3>
+    <p>Projects reveal as you scroll:</p>
+    <pre>
+Algorithm: ScrollTrigger Height Animation
+────────────────────────────────────────
+Initial State: height = 100px (collapsed)
+Final State:   height = 850px (full height)
+
+ScrollTrigger Configuration:
+- Trigger: When .lol element enters viewport
+- Start: When top of trigger is at 100% of viewport
+- End: When top of trigger is at -150% of viewport
+- Scrub: true (animation tied to scroll position)
+- Stagger: 0.4s between each card
+
+Visual Flow:
+Scroll ↓
+Card 1: 100px → 850px
+   ↓ (0.4s delay)
+Card 2: 100px → 850px
+   ↓ (0.4s delay)
+Card 3: 100px → 850px
+    </pre>
+
+    <h3>4. Navigation Color Logic</h3>
+    <p>Navbar adapts its color based on the current page:</p>
+    <pre>
+Algorithm: Route-Based Color Switcher
+────────────────────────────────────
+useEffect(() => {
+    const currentPath = location.pathname
+    
+    if (currentPath === '/projects' || currentPath === '/agence') {
+        setNavColor('black')     // Dark pages need black logo
+    } else {
+        setNavColor('white')     // Light pages need white logo
+    }
+}, [location.pathname])
+
+Routing Table:
+┌────────────────┬──────────────┬─────────────┐
+│ Route          │ Background   │ Logo Color  │
+├────────────────┼──────────────┼─────────────┤
+│ /              │ Dark Video   │ White       │
+│ /projects      │ Light        │ Black       │
+│ /agence        │ Light        │ Black       │
+└────────────────┴──────────────┴─────────────┘
+    </pre>
+
+    <h3>5. Full-Screen Navigation Timeline</h3>
+    <p>Complex multi-step animation sequence:</p>
+    <pre>
+Opening Animation Sequence:
+──────────────────────────
+Step 1: Display fullscreen overlay (display: block)
+Step 2: Reveal stairs (height: 0 → 100%, staggered -0.3s)
+Step 3: Show navigation links (opacity: 0 → 1, rotateX: 90 → 0)
+Step 4: Fade in close button (opacity: 0 → 1)
+
+Closing Animation Sequence:
+──────────────────────────
+Step 1: Hide navigation links (opacity: 1 → 0, rotateX: 0 → 90)
+Step 2: Collapse stairs (height: 100% → 0, staggered 0.1s)
+Step 3: Fade out close button (opacity: 1 → 0)
+Step 4: Hide fullscreen overlay (display: none)
+    </pre>
+</div>
+
+<!-- 6. UI/UX DESIGN -->
+<h1 id="uiux">6. UI/UX Design</h1>
+<div class="section">
+    <h2>🎨 Design System</h2>
+
+    <h3>Typography</h3>
+    <table>
+        <tr>
+            <th>Font Family</th>
+            <th>Weight</th>
+            <th>Usage</th>
+        </tr>
+        <tr>
+            <td>Lausanne</td>
+            <td>300 (Light)</td>
+            <td>Body text, descriptions (font1)</td>
+        </tr>
+        <tr>
+            <td>Lausanne</td>
+            <td>500 (Medium)</td>
+            <td>Headings, navigation (font2)</td>
+        </tr>
+    </table>
+
+    <h3>Color Palette</h3>
+    <table>
+        <tr>
+            <th>Color</th>
+            <th>Hex/Name</th>
+            <th>Usage</th>
+        </tr>
+        <tr>
+            <td style="background: #D3FD50;">     </td>
+            <td>#D3FD50</td>
+            <td>Accent color (hover states, CTA)</td>
+        </tr>
+        <tr>
+            <td style="background: #000000;">     </td>
+            <td>#000000 (Black)</td>
+            <td>Background, text</td>
+        </tr>
+        <tr>
+            <td style="background: #FFFFFF;">     </td>
+            <td>#FFFFFF (White)</td>
+            <td>Text, borders</td>
+        </tr>
+    </table>
+
+    <h3>🖱️ Interactive Elements</h3>
+    <ul class="feature-list">
+        <li><strong>Navbar Hover:</strong> Green (#D3FD50) fill slides from bottom (height: 0 → 100%)</li>
+        <li><strong>Project Cards:</strong> Rounded corners on hover (0px → 70px), overlay with "Voir le projet" text</li>
+        <li><strong>Navigation Links:</strong> Animated text with moving images on hover</li>
+        <li><strong>CTA Buttons:</strong> Border color changes to green on hover</li>
+    </ul>
+
+    <h3>📱 Responsive Design</h3>
+    <p>Tailwind CSS breakpoints used throughout:</p>
+    <pre>
+Breakpoint System:
+──────────────────
+Default (Mobile):  < 1024px
+lg (Desktop):      ≥ 1024px
+
+Responsive Patterns:
+- Font sizes: text-[12vw] lg:text-[9.5vw]
+- Spacing: p-2 lg:p-5
+- Dimensions: w-24 lg:w-36
+- Layouts: flex-col lg:flex-row
+    </pre>
+
+    <h3>🎯 User Experience Features</h3>
+    <ul class="feature-list">
+        <li>Smooth page transitions eliminate jarring navigation</li>
+        <li>Video autoplay (muted) creates immersive experience</li>
+        <li>Scroll-based animations provide engaging feedback</li>
+        <li>Full-screen navigation prevents overwhelming users</li>
+        <li>Hover states provide clear interaction cues</li>
+    </ul>
+</div>
+
+<!-- 7. ANIMATIONS -->
+<h1 id="animations">7. Animation Tools & Techniques</h1>
+<div class="section">
+    <h2>🎬 Animation Library: GSAP (GreenSock Animation Platform)</h2>
+    <p>GSAP is a professional-grade JavaScript animation library used throughout the project.</p>
+
+    <h3>📚 GSAP Modules Used</h3>
+    <table>
+        <tr>
+            <th>Module</th>
+            <th>Purpose</th>
+            <th>Usage</th>
+        </tr>
+        <tr>
+            <td><code>gsap.timeline()</code></td>
+            <td>Sequential animations</td>
+            <td>Navigation menus, page transitions</td>
+        </tr>
+        <tr>
+            <td><code>gsap.from()</code></td>
+            <td>Animate from state</td>
+            <td>Stairs effect, element reveals</td>
+        </tr>
+        <tr>
+            <td><code>gsap.to()</code></td>
+            <td>Animate to state</td>
+            <td>Navigation close, scrolling effects</td>
+        </tr>
+        <tr>
+            <td><code>ScrollTrigger</code></td>
+            <td>Scroll-based animations</td>
+            <td>Project cards, image sequences</td>
+        </tr>
+        <tr>
+            <td><code>useGSAP</code></td>
+            <td>React integration</td>
+            <td>Cleanup and lifecycle management</td>
+        </tr>
+    </table>
+
+    <h3>🔄 Animation Types Implemented</h3>
+
+    <h4>1. Page Transition Animation (Stairs)</h4>
+    <pre>
+gsap.timeline()
+  .to(stairParent, { display: 'block' })
+  .from('.stair', {
+      height: 0,
+      stagger: { amount: -0.2 }  // Right-to-left reveal
+  })
+  .to('.stair', {
+      y: '100%',
+      stagger: { amount: -0.25 }  // Slide up
+  })
+  .to(stairParent, { display: 'none' })
+  .to('.stair', { y: '0%' })      // Reset for next use
+    </pre>
+
+    <h4>2. ScrollTrigger Animation</h4>
+    <pre>
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.from('.hero', {
+  height: '100px',
+  stagger: { amount: 0.4 },
+  scrollTrigger: {
+    trigger: '.lol',
+    start: 'top 100%',      // When trigger enters viewport
+    end: 'top -150%',       // Animation end point
+    scrub: true,            // Tie animation to scroll
+  }
+})
+    </pre>
+
+    <h4>3. Image Sequence Animation</h4>
+    <pre>
+gsap.to(imageDiv, {
+  scrollTrigger: {
+    trigger: imageDiv,
+    start: 'top 28%',
+    end: 'top -70%',
+    pin: true,              // Pin element during scroll
+    scrub: 1,               // Smooth scrolling
+    onUpdate: (self) => {
+      // Calculate image index based on scroll progress
+      const index = Math.floor(self.progress * images.length)
+      imageRef.src = images[index]
+    }
+  }
+})
+    </pre>
+
+    <h3>💫 CSS Animations</h3>
+    <pre>
+/* Infinite horizontal scroll */
+@keyframes moveAnimation {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.moveX {
+    animation: moveAnimation 10s linear infinite;
+}
+
+/* Hover fade effect */
+.moveLink {
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.link:hover .moveLink {
+    opacity: 1;
+}
+    </pre>
+
+    <h3>⚙️ Animation Configuration</h3>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Value</th>
+            <th>Effect</th>
+        </tr>
+        <tr>
+            <td>stagger</td>
+            <td>-0.2s to 0.4s</td>
+            <td>Delay between animated elements</td>
+        </tr>
+        <tr>
+            <td>scrub</td>
+            <td>true or 1</td>
+            <td>Tie animation to scroll position</td>
+        </tr>
+        <tr>
+            <td>pin</td>
+            <td>true</td>
+            <td>Fix element during scroll animation</td>
+        </tr>
+        <tr>
+            <td>duration</td>
+            <td>10s</td>
+            <td>CSS animation duration</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 8. SETUP & INSTALLATION -->
+<h1 id="setup">8. Setup & Installation Guide</h1>
+<div class="section">
+    <h2>📋 Prerequisites</h2>
+    <ul class="feature-list">
+        <li>Node.js (version 14 or higher)</li>
+        <li>npm (Node Package Manager) or yarn</li>
+        <li>Git (for cloning the repository)</li>
+        <li>Modern web browser (Chrome, Firefox, Safari, Edge)</li>
+        <li>Code editor (VS Code recommended)</li>
+    </ul>
+
+    <h2>⚡ Quick Start</h2>
+    <h3>Step 1: Clone the Repository</h3>
+    <pre>
+git clone https://github.com/Yuvi-crypto18/k72-main.git
+cd k72-main
+    </pre>
+
+    <h3>Step 2: Install Dependencies</h3>
+    <pre>
+npm install
+# or
+yarn install
+    </pre>
+
+    <p>This will install all required packages:</p>
+    <ul>
+        <li>React 18.2.0</li>
+        <li>Vite 5.2.0</li>
+        <li>GSAP 3.13.0</li>
+        <li>Tailwind CSS 4.1.12</li>
+        <li>React Router DOM 7.8.0</li>
+    </ul>
+
+    <h3>Step 3: Start Development Server</h3>
+    <pre>
+npm run dev
+# or
+yarn dev
+    </pre>
+
+    <p>The application will start at <code>http://localhost:5173</code></p>
+
+    <h3>Step 4: Build for Production</h3>
+    <pre>
+npm run build
+# or
+yarn build
+    </pre>
+
+    <p>Production files will be generated in the <code>dist/</code> directory.</p>
+
+    <h3>Step 5: Preview Production Build</h3>
+    <pre>
+npm run preview
+# or
+yarn preview
+    </pre>
+
+    <h2>📜 Available Scripts</h2>
+    <table>
+        <tr>
+            <th>Command</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>npm run dev</code></td>
+            <td>Start development server with hot reload</td>
+        </tr>
+        <tr>
+            <td><code>npm run build</code></td>
+            <td>Build optimized production bundle</td>
+        </tr>
+        <tr>
+            <td><code>npm run preview</code></td>
+            <td>Preview production build locally</td>
+        </tr>
+        <tr>
+            <td><code>npm run lint</code></td>
+            <td>Run ESLint to check code quality</td>
+        </tr>
+    </table>
+
+    <h2>🔧 Configuration Files</h2>
+
+    <h3>vite.config.js</h3>
+    <pre>
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})
+    </pre>
+
+    <h3>package.json (Key Sections)</h3>
+    <pre>
+{
+  "name": "k72-yt",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
+    </pre>
+
+    <h2>🚀 Deployment</h2>
+    <h3>Deploy to Netlify</h3>
+    <pre>
+1. Build the project: npm run build
+2. Upload dist/ folder to Netlify
+3. Set build command: npm run build
+4. Set publish directory: dist
+    </pre>
+
+    <h3>Deploy to Vercel</h3>
+    <pre>
+1. Install Vercel CLI: npm i -g vercel
+2. Run: vercel
+3. Follow the prompts
+    </pre>
+
+    <h2>⚠️ Troubleshooting</h2>
+    <table>
+        <tr>
+            <th>Issue</th>
+            <th>Solution</th>
+        </tr>
+        <tr>
+            <td>Port 5173 already in use</td>
+            <td>Kill the process or change port in vite.config.js</td>
+        </tr>
+        <tr>
+            <td>Module not found errors</td>
+            <td>Delete node_modules and run npm install again</td>
+        </tr>
+        <tr>
+            <td>Video not playing</td>
+            <td>Ensure video.mp4 exists in public/ folder</td>
+        </tr>
+        <tr>
+            <td>Fonts not loading</td>
+            <td>Check public/fonts/ directory has .woff2 files</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 9. COMPONENT STRUCTURE -->
+<h1 id="components">9. Component Structure</h1>
+<div class="section">
+    <h2>🧩 Component Hierarchy</h2>
+
+    <h3>App.jsx (Root Component)</h3>
+    <pre>
+Purpose: Main application router and layout
+Dependencies: React Router DOM
+Features:
+  - Route configuration
+  - Persistent navbar
+  - Full-screen navigation overlay
+    </pre>
+
+    <h3>Navigation Components</h3>
+
+    <h4>Navbar.jsx</h4>
+    <pre>
+Location: src/components/Navigation/Navbar.jsx
+Purpose: Main navigation bar (always visible)
+State: navOpen, navColor
+Features:
+  - K72 logo (SVG)
+  - Hamburger menu button
+  - Dynamic color based on route
+  - Hover animations (green fill effect)
+Props: None (uses Context)
+    </pre>
+
+    <h4>FullScreenNav.jsx</h4>
+    <pre>
+Location: src/components/Navigation/FullScreenNav.jsx
+Purpose: Animated full-screen navigation menu
+State: navOpen (from Context)
+Features:
+  - Stairs animation entrance/exit
+  - 4 navigation links (Projects, Agence, Contact, Blogs)
+  - Animated image carousel on hover
+  - Close button (X)
+Animations:
+  - Opening: Stairs reveal → Links fade in
+  - Closing: Links fade out → Stairs collapse
+    </pre>
+
+    <h3>Page Components</h3>
+
+    <h4>Home.jsx</h4>
+    <pre>
+Location: src/pages/Home.jsx
+Purpose: Landing page with video background
+Children:
+  - Video (background)
+  - HomeHeroText (main title)
+  - HomeBottomText (CTA buttons)
+Layout:
+  - Fixed video layer
+  - Relative content layer
+  - Fullscreen height (h-screen)
+    </pre>
+
+    <h4>Projects.jsx</h4>
+    <pre>
+Location: src/pages/Projects.jsx
+Purpose: Portfolio showcase
+Features:
+  - 3 rows of project pairs
+  - Scroll-triggered height animations
+  - GSAP ScrollTrigger integration
+Data: Hardcoded project image URLs
+Animation:
+  - Cards grow from 100px to 850px on scroll
+  - Staggered animation (0.4s between cards)
+    </pre>
+
+    <h4>Agence.jsx</h4>
+    <pre>
+Location: src/pages/Agence.jsx
+Purpose: About the agency
+Features:
+  - 14 team member images
+  - Scroll-based image sequence
+  - Pinned image container
+  - Agency description text (French)
+Algorithm:
+  - Image changes based on scroll progress
+  - Pin element during scroll range
+  - 28% to -70% scroll range
+    </pre>
+
+    <h3>Utility Components</h3>
+
+    <h4>Stairs.jsx</h4>
+    <pre>
+Location: src/components/common/Stairs.jsx
+Purpose: Page transition wrapper
+Trigger: Route change (useLocation hook)
+Animation Sequence:
+  1. Display stairs overlay
+  2. Stairs grow from bottom (height: 0 → 100%)
+  3. Stairs slide up (y: 0 → y: 100%)
+  4. Hide stairs overlay
+  5. Fade in new page content
+Props: children (wrapped page content)
+    </pre>
+
+    <h4>Video.jsx</h4>
+    <pre>
+Location: src/components/home/Video.jsx
+Purpose: Video player component
+Features:
+  - Autoplay
+  - Loop
+  - Muted (for autoplay to work)
+  - Object-fit: cover
+Source: ../../../public/video.mp4
+    </pre>
+
+    <h4>ProjectCard.jsx</h4>
+    <pre>
+Location: src/components/projects/ProjectCard.jsx
+Purpose: Display project with hover effect
+Props:
+  - image1: First project image URL
+  - image2: Second project image URL
+Features:
+  - Two side-by-side images
+  - Rounded corners on hover (0 → 70px)
+  - Overlay with "Voir le projet" button
+  - Group hover effect
+    </pre>
+
+    <h3>Context Providers</h3>
+
+    <h4>NavContext.jsx</h4>
+    <pre>
+Location: src/context/NavContext.jsx
+Purpose: Global navigation state management
+Contexts:
+  1. NavbarContext
+     - State: navOpen (boolean)
+     - Controls: Full-screen menu visibility
+  
+  2. NavbarColorContext
+     - State: navColor ('white' | 'black')
+     - Logic: Changes based on current route
+     - Routes with black logo: /projects, /agence
+     - Routes with white logo: / (home)
+    </pre>
+
+    <h2>🔗 Component Communication</h2>
+    <div class="architecture-diagram">
+Navigation State Flow:
+─────────────────────
+NavContext (Provider)
+    ├── Navbar (Consumer)
+    │   └── Updates: navOpen = true (on click)
+    └── FullScreenNav (Consumer)
+        └── Reads: navOpen (show/hide menu)
+        └── Updates: navOpen = false (on close)
+
+Color State Flow:
+────────────────
+NavContext (Provider)
+    └── useLocation() hook
+        └── Updates navColor based on pathname
+            └── Navbar reads navColor for logo
+    </div>
+</div>
+
+<!-- 10. CODE ANALYSIS -->
+<h1 id="code-analysis">10. Complete Code Analysis</h1>
+<div class="section">
+    <h2>📁 File-by-File Breakdown</h2>
+
+    <h3>main.jsx (Entry Point)</h3>
+    <pre>
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+import Stairs from './components/common/Stairs.jsx'
+import NavContext from './context/NavContext.jsx'
+
+// Render hierarchy:
+// BrowserRouter → Stairs → NavContext → App
+ReactDOM.createRoot(document.getElementById('root')).render(
+  &lt;React.StrictMode&gt;
+    &lt;BrowserRouter&gt;
+      &lt;Stairs&gt;
+        &lt;NavContext&gt;
+          &lt;App /&gt;
+        &lt;/NavContext&gt;
+      &lt;/Stairs&gt;
+    &lt;/BrowserRouter&gt;
+  &lt;/React.StrictMode&gt;,
+)
+    </pre>
+
+    <h3>App.jsx (Router)</h3>
+    <pre>
+Key Features:
+- Route configuration with 3 pages
+- Persistent navigation components
+- overflow-x-hidden to prevent horizontal scroll
+
+Routes:
+/ → Home (landing page)
+/agence → Agence (about page)
+/projects → Projects (portfolio page)
+    </pre>
+
+    <h3>index.css (Global Styles)</h3>
+    <pre>
+@font-face Declarations:
+- font1: Lausanne-300 (light)
+- font2: Lausanne-500 (medium)
+
+Custom CSS Classes:
+.moveX - Infinite horizontal scroll animation
+.moveLink - Hidden by default, shown on hover
+.link:hover .moveLink - Parent-child hover relationship
+
+@keyframes moveAnimation:
+- Translates element from 0 to -100% horizontally
+- Duration: 10 seconds
+- Infinite loop
+    </pre>
+
+    <h3>Key Code Patterns</h3>
+
+    <h4>1. GSAP Integration Pattern</h4>
+    <pre>
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+
+useGSAP(function () {
+  // Animation code here
+  gsap.to('.element', { /* properties */ })
+}, [dependencies])
+
+Benefits:
+- Automatic cleanup on unmount
+- Runs when dependencies change
+- React-friendly lifecycle
+    </pre>
+
+    <h4>2. Context Usage Pattern</h4>
+    <pre>
+// Create contexts
+export const NavbarContext = createContext()
+export const NavbarColorContext = createContext()
+
+// Provider component
+const NavContext = ({ children }) => {
+  const [navOpen, setNavOpen] = useState(false)
+  const [navColor, setNavColor] = useState('white')
+  
+  return (
+    &lt;NavbarContext.Provider value={[navOpen, setNavOpen]}&gt;
+      &lt;NavbarColorContext.Provider value={[navColor, setNavColor]}&gt;
+        {children}
+      &lt;/NavbarColorContext.Provider&gt;
+    &lt;/NavbarContext.Provider&gt;
+  )
+}
+
+// Consumer component
+const [navOpen, setNavOpen] = useContext(NavbarContext)
+    </pre>
+
+    <h4>3. ScrollTrigger Pattern</h4>
+    <pre>
+import { ScrollTrigger } from 'gsap/all'
+
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.from('.element', {
+  // Initial state
+  height: '100px',
+  
+  scrollTrigger: {
+    trigger: '.trigger-element',
+    start: 'top 100%',    // When trigger top hits viewport bottom
+    end: 'top -150%',     // When trigger top is 150% above viewport
+    scrub: true,          // Smooth scroll-linked animation
+  }
+})
+    </pre>
+
+    <h4>4. Responsive Design Pattern</h4>
+    <pre>
+Tailwind Responsive Classes:
+- Base (mobile): text-[12vw]
+- Large screen: lg:text-[9.5vw]
+
+Pattern:
+className='text-[12vw] lg:text-[9.5vw]'
+          ↑ mobile     ↑ desktop
+
+Common responsive pairs:
+- p-2 lg:p-5 (padding)
+- w-24 lg:w-36 (width)
+- flex-col lg:flex-row (layout direction)
+- gap-2 lg:gap-4 (spacing)
+    </pre>
+
+    <h4>5. Ref Pattern for GSAP</h4>
+    <pre>
+const elementRef = useRef(null)
+
+useGSAP(() => {
+  gsap.to(elementRef.current, {
+    opacity: 1,
+    duration: 1
+  })
+})
+
+return &lt;div ref={elementRef}&gt;Content&lt;/div&gt;
+
+Why refs?
+- Direct DOM access needed for GSAP
+- Avoids React re-renders during animation
+- Better performance for complex animations
+    </pre>
+
+    <h2>🏆 Best Practices Implemented</h2>
+    <ul class="feature-list">
+        <li><strong>Component Modularity:</strong> Small, focused components with single responsibilities</li>
+        <li><strong>State Management:</strong> Context API for global state, local state for component-specific needs</li>
+        <li><strong>Performance:</strong> useRef for animations to avoid unnecessary re-renders</li>
+        <li><strong>Responsive Design:</strong> Mobile-first approach with Tailwind breakpoints</li>
+        <li><strong>Code Organization:</strong> Clear folder structure separating concerns</li>
+        <li><strong>Animation Cleanup:</strong> useGSAP hook ensures animations are properly cleaned up</li>
+        <li><strong>Accessibility:</strong> Semantic HTML structure</li>
+    </ul>
+
+    <h2>🔍 Code Quality Insights</h2>
+    <table>
+        <tr>
+            <th>Aspect</th>
+            <th>Implementation</th>
+            <th>Rating</th>
+        </tr>
+        <tr>
+            <td>Component Structure</td>
+            <td>Well-organized, logical hierarchy</td>
+            <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+            <td>State Management</td>
+            <td>Appropriate use of Context API</td>
+            <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+            <td>Animations</td>
+            <td>Professional GSAP implementation</td>
+            <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+            <td>Responsive Design</td>
+            <td>Comprehensive mobile/desktop support</td>
+            <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+            <td>Code Readability</td>
+            <td>Clean, well-structured JSX</td>
+            <td>⭐⭐⭐⭐☆</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>Optimized with refs and memoization</td>
+            <td>⭐⭐⭐⭐☆</td>
+        </tr>
+    </table>
+</div>
+
+<!-- CONCLUSION -->
+<h1>📚 Conclusion</h1>
+<div class="section">
+    <h2>Project Summary</h2>
+    <p>The K72-Main project is a sophisticated, animation-rich portfolio website built with modern web technologies. It demonstrates advanced frontend development skills including:</p>
+    
+    <ul class="feature-list">
+        <li>Professional animation implementation with GSAP</li>
+        <li>Smooth page transitions and scroll effects</li>
+        <li>Responsive design with Tailwind CSS</li>
+        <li>Clean component architecture with React</li>
+        <li>Performance-optimized build with Vite</li>
+    </ul>
+
+    <h2>Technical Highlights</h2>
+    <p><span class="badge badge-primary">React 18</span> <span class="badge badge-success">GSAP Animations</span> <span class="badge badge-warning">ScrollTrigger</span> <span class="badge badge-info">Tailwind CSS</span></p>
+
+    <h2>Potential Improvements</h2>
+    <ul>
+        <li>Add loading states for images</li>
+        <li>Implement lazy loading for better performance</li>
+        <li>Add SEO meta tags and Open Graph data</li>
+        <li>Implement actual routing for navigation links</li>
+        <li>Add form functionality for contact page</li>
+        <li>Consider adding a CMS for content management</li>
+    </ul>
+
+    <div class="alert alert-info">
+        <strong>📌 Note:</strong> This documentation provides a complete technical overview of the K72-Main project as of 10/3/2025. For the latest updates, refer to the project repository.
+    </div>
+</div>
+
+</body>
+</html>
